@@ -8,17 +8,18 @@
     height: 100vh;
     padding-bottom: 100px;
     padding-top: auto;
-
+    /*background-image:url("inq22.gif");
+    background-size: cover;*/
     display: grid;
     place-content: center;
-    background: black;
+    /*background: black;*/
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-content: center;
     align-items: center;
-    background-color: black;
-   /*background-image: url("black.jpg");*/
+    /*background-color: black;*/
+   
   }
   
   .box {
@@ -102,6 +103,44 @@
         opacity: .95;
         width: 400px;  
         z-index: 2;
+}
+html {
+  background: black;
+  overflow: hidden;
+}
+
+.grid {
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: -50%;
+  background-color: rgba(20 30 40 0.4);
+  background-image: linear-gradient(90deg, transparent 0%, transparent 85%, red 90%, transparent 95%), linear-gradient(0deg, transparent 0%, transparent 85%, green 90%, transparent 95%);
+  background-size: 12px 12px;
+  width: 200vw;
+  height: 60vh;
+  transform: translate3D(0, 0, 0) perspective(150px) rotateX(45deg) ;
+  perspective-origin: top;
+  
+  animation-name: movement;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.grid:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, black);
+}
+
+@keyframes movement {
+  0% {background-position: 0% 0%;}
+  100% {background-position: 0% 100%;}
 }
   
 .inq:hover
